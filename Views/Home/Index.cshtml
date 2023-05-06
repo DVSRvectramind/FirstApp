@@ -1,8 +1,29 @@
-﻿@{
+﻿
+@model FirstApp.Models.User
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @using (Html.BeginForm(null, null, FormMethod.Post))
+    {
+        <table class="table table-bordered">
+            <tr>
+                <td>ID</td>
+                <td>
+                    @Html.TextBoxFor(u=>u.id, new {@class="form-control", @maxlength="5"})
+                </td>
+            </tr>
+            <tr>
+                <td>User name</td>
+                <td>@Html.TextBoxFor(u=>u.userName, new {@class="form-control", @maxlength="20"})</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button class="btn btn-primary" id="btnSave" type="submit">Save</button>
+                </td>
+            </tr>
+        </table>
+    }
+    
 </div>

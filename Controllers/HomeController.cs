@@ -15,6 +15,11 @@ namespace FirstApp.Controllers
 
         public IActionResult Index()
         {
+            return View(new User());
+        }
+        [HttpPost]
+        public IActionResult Index(User user)
+        {
             return View();
         }
 
