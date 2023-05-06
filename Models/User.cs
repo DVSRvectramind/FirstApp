@@ -3,6 +3,7 @@
     public class User
     {
         public int id { get; set; }
-        public string userName { get; set; }
+        public string userFirstName { get; set; }
+        public string userSecondName { get; set; }
     }
 }
